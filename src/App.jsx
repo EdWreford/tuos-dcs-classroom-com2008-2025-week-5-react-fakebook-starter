@@ -1,10 +1,11 @@
 import { Container } from "react-bootstrap";
+import RegisterForm from "./RegisterForm.jsx";
 
 const App = () => {
 
   return (
     <Container>
-      <p>Hello, world!</p>
+      <RegisterForm/>
     </Container>
   );
 }
