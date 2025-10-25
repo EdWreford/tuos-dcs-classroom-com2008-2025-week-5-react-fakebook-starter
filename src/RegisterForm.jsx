@@ -22,11 +22,9 @@ const RegisterForm = () => {
         setHasError(false);
         setToken(data.token);
       })
-      .catch((error) => {
-        console.dir(error)
+      .catch(() => {
         setHasError(true);
       })
-
   }
 
   return (
