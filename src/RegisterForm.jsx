@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 
 import { Alert, Button, Form } from "react-bootstrap";
 import axios from "axios";
-import { isEmpty } from "lodash/lang.js";
 
 const RegisterForm = () => {
 
@@ -34,7 +33,7 @@ const RegisterForm = () => {
     <Form className="mt-2" onSubmit={submitHandler}>
       {hasError && (
         <Alert variant="danger">
-          An error occurred (this is an unhelpful message we will improve later)
+          An error occurred (this is an unhelpful message that we shall improve later)
         </Alert>
       )}
       <Form.Group controlId="username">
