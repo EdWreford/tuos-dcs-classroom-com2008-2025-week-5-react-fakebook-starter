@@ -1,23 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+
 import { Stack } from "react-bootstrap";
+import { isEmpty } from "lodash";
 
 import Post from "./Post.jsx";
-import axios from "axios";
 
-const Posts = () => {
-  const [posts, setPosts] = useState([]);
+const Posts = ({ client, posts }) => {
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/posts")
-      .then(({ data }) => setPosts(data))
+    client.getPosts()
   }, []);
 
   return (
-    <Stack gap={2}>
-      {posts.map(p => (
-        <Post key={p.id} post={p} />
-      ))}
-    </Stack>
+    <>
+      <h1>Posts</h1>
+      {isEmpty(posts) && (
+        <p>No Posts Yet</p>
+      )}
+      <Stack gap={2}>
+        {posts.map(p => (
+          <Post key={p.id} post={p}/>
+        ))}
+      </Stack>
+    </>
   )
 };
 

@@ -3,12 +3,11 @@ import { useRef, useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import axios from "axios";
 
-const RegisterForm = () => {
+const RegisterForm = ({ setToken }) => {
 
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const [token, setToken] = useState("");
   const [hasError, setHasError] = useState(false);
 
   const submitHandler = (e) => {
@@ -45,7 +44,6 @@ const RegisterForm = () => {
       <Button className="mt-2" variant="primary" type="submit">
         Submit
       </Button>
-      <p>{token}</p>
     </Form>
   );
 };
